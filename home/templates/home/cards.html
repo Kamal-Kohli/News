@@ -1,0 +1,38 @@
+{% load static %}
+
+{% block content %}
+    <!-- News cards -->
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+        {% for article in articles %}
+        <div class="col">
+          <div class="card shadow-sm">
+            {% if article.urlToImage %}
+            <img src="{{ article.urlToImage }}" alt="" width="auto"/>
+            {% endif %}
+
+            <div class="card-body">
+              {% if article.author %}
+              <p class="card-title h5 mb-2">{{ article.author }}</p>
+              {% endif %}
+              <h5 class="card-title h5 mb-2">{{ article.title }}</h5>
+              {% if article.source and article.source.name %}
+              <p class="card-title h5 mb-2">{{ article.source.name }}</p>
+              {% endif %}
+              {% if article.description %}
+              <p class="card-text text-truncate">{{ article.description }}</p>
+              {% endif %}
+              <div class="d-flex justify-cntent-between align-items-center"></div>
+              <hr/>
+              {% if article.publishedAt %}
+              <small class="small text-muted">date: {{ article.publishedAt }}</small>
+              {% endif %}
+              <a href="{{ article.url }}" target="_blank" class="btn btn-success m-1">Read More...</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <br/>
+{% endblock %}

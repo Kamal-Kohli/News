@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
 
     # Apps
-    'home',
+    'home.apps.HomeConfig',
 
     # Crispy
     'crispy_forms',
@@ -152,7 +152,7 @@ LOGIN_REDIRECT_URL = '/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 

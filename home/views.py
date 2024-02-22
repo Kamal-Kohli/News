@@ -3,6 +3,7 @@ import requests
 
 API_KEY = '2228671f48644d399e8cc37fb14015f6'
 
+# Create your views here.
 class Index(TemplateView):
     template_name = 'home/index.html'
 

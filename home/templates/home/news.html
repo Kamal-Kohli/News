@@ -1,0 +1,38 @@
+
+{% block content %}
+    <!-- News cards -->
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+        {% for article in articles %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="{{ article.urlToImage }}" alt="" width="auto"/>
+            <div class="card-body">
+              <p class="card-title h5 mb-2">{{ article.author }}</p>
+              <h5 class="card-title h5 mb-2">{{ article.title }}</h5>
+              <p class="card-title h5 mb-2">{{ article.source.name }}</p>
+              <p class="card-text text-truncate">{{ article.description }}</p>
+              <div class="d-flex justify-cntent-between align-items-center"></div>
+              <hr/>
+              <small class="small text-muted">date: {{ article.publishedAt }}</small>
+              <a href="{{ article.url }}" target="_blank" class="btn btn-success m-1">Read More...</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <br/>
+{% endblock %}
+
+<!-- Pagination controls -->
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1" {% if not page_obj.has_previous %}aria-disabled="true"{% endif %}>Previous</a>
+        </li>
+        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+        </li>
+    </ul>
+</nav>

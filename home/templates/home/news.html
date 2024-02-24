@@ -1,5 +1,5 @@
-
 {% block content %}
+
     <!-- News cards -->
     <div class="container">
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
@@ -24,15 +24,3 @@
     </div>
     <br/>
 {% endblock %}
-
-<!-- Pagination controls -->
-<nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
-            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1" {% if not page_obj.has_previous %}aria-disabled="true"{% endif %}>Previous</a>
-        </li>
-        <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
-            <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
-        </li>
-    </ul>
-</nav>

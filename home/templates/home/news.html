@@ -2,32 +2,34 @@
 
 {% block content %}
 
-    <!-- News cards -->
-    <div class="container">
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
-        {% for article in articles %}
-        <div class="col">
-          <div class="card shadow-sm">
-            {% if article.urlToImage %}
-              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" height="200px" width="auto"/>
-            {% else %}
-              <!-- Placeholder image -->
-              <img src="{% static 'images/pna.webp' %}" alt="Placeholder image" height="200px" width="auto"/>
-            {% endif %}
-            <div class="card-body">
-              <p class="card-title h5 mb-2">{{ article.author }}</p>
-              <h5 class="card-title h5 mb-2">{{ article.title }}</h5>
-              <p class="card-title h5 mb-2">{{ article.source.name }}</p>
-              <p class="card-text text-truncate">{{ article.description }}</p>
-              <div class="d-flex justify-cntent-between align-items-center"></div>
-              <hr/>
-              <small class="small text-muted">date: {{ article.publishedAt }}</small>
-              <a href="{{ article.url }}" target="_blank" class="btn btn-success m-1">Read More...</a>
-            </div>
+  <!-- News cards -->
+   <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2">
+      {% for article in articles %}
+      <div class="col">
+        <div class="card shadow-sm h-100 d-flex flex-column"> 
+          <!-- Articles image -->
+          {% if article.urlToImage %}
+            <img src="{{ article.urlToImage }}" alt="{{ article.title }}" class="card-img-top img-fluid" style="object-fit: cover; height: 200px;">
+          {% else %}
+          <!-- Placeholder image -->
+            <img src="{% static 'images/pna.webp' %}" alt="Placeholder image" class="card-img-top img-fluid" style="object-fit: cover; height: 200px;">
+          {% endif %}
+          <!-- Card Body -->
+          <div class="card-body d-flex flex-column">
+            <p class="card-title h5 mb-2">{{ article.author }}</p>
+            <h5 class="card-title h5 mb-2">{{ article.title }}</h5>
+            <p class="card-title h5 mb-2">{{ article.source.name }}</p>
+            <p class="card-text text-truncate">{{ article.description }}</p>
+            <div class="mt-auto"></div> 
+            <hr/>
+            <small class="small text-muted">date: {{ article.publishedAt }}</small>
+            <a href="{{ article.url }}" target="_blank" class="btn btn-success mt-2">Read More...</a>
           </div>
         </div>
-        {% endfor %}
       </div>
+      {% endfor %}
     </div>
-    <br/>
+  </div>
+  <br/>
 {% endblock %}

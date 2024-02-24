@@ -40,7 +40,6 @@ nav {
 h1 {
     font-family: var(--title);
     color: var(--black);
-    
 }
 .lead {
     font-family: var(--main-font);
@@ -58,7 +57,6 @@ h1 {
 }
 
 /* Article */
-
     /* Button */
 .custom-width-btn {
     width: 50%; 
@@ -70,4 +68,23 @@ h1 {
 
 .h5 {
     color: var(--red);
+}
+
+/* Float Social Icon */
+
+.social-icon {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000; 
+    padding-right: 15px;
+}
+
+.social-icon a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 30px;
+    text-decoration: none;
+    color: var(--black);
 }

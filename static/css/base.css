@@ -6,47 +6,49 @@
     --main-font: 'Roboto', serif;
 
     /* Colours */
-    --background: #6e6e6e0f;
+    --background: #918e8e;
+    --blue: #0d6efd;
+    --black: #000;
+    --off-white: #f6f6f6;
+    --white: #fff;
+    --red: #b50000;
+    --brown: #3d2c2c;
+
+
 }
 
-body {
-    
+
+
+ body {
+    background-color: var(--off-white);
 }
 
-/* header */
-
-main {
-    flex: 1 0 auto;
-    background-color: var(--grey);
+/* Colours */
+nav {
+    background-color: var(--red);
 }
 
-h1 h2 h3 h4 h5 {
+
+.navbar-nav .nav-link {
+    color: var(--white);
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--white);
+} 
+
+/* Header & Title */
+h1 {
     font-family: var(--title);
 }
-
-p {
+p{
     font-family: var(--main-font);
 }
 
-.active {
-    border-bottom: 2px solid var(--blue);
-    font-weight: 500;
+
+/* Article */
+
+    /* Button */
+.custom-width-btn {
+    width: 50%; 
 }
-
-/* Form */
-
-.form {
-    width: 100%;
-    margin: 3% auto;
-    box-shadow: var(--smal-box-shadow);
-    border-radius: 5px;
-}
-
-/* Footer */
-footer {
-    flex-shrink: 0;
-    justify-content: center;
-    align-items: center;
-    
-}
-

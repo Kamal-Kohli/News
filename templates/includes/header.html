@@ -3,7 +3,7 @@
 <!-- Navbar -->
 <header>
   {% with request.resolver_match.url_name as url_name %}
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container-fluid">
             <!-- Logo -->
           <a class="navbar-brand active" href="{% url 'home' %}?category=general"><img src="{% static 'images/logo.webp' %}" alt="Heads and Tails animated logo" class="logo" width="200px"></a>

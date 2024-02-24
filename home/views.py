@@ -1,4 +1,5 @@
 from django.views.generic import TemplateView
+from django.shortcuts import render
 import requests
 
 API_KEY = '2228671f48644d399e8cc37fb14015f6'

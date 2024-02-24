@@ -1,3 +1,5 @@
+{% load static %}
+
 {% block content %}
 
     <!-- News cards -->
@@ -6,7 +8,12 @@
         {% for article in articles %}
         <div class="col">
           <div class="card shadow-sm">
-            <img src="{{ article.urlToImage }}" alt="" width="auto"/>
+            {% if article.urlToImage %}
+              <img src="{{ article.urlToImage }}" alt="{{ article.title }}" height="200px" width="auto"/>
+            {% else %}
+              <!-- Placeholder image -->
+              <img src="{% static 'images/pna.webp' %}" alt="Placeholder image" height="200px" width="auto"/>
+            {% endif %}
             <div class="card-body">
               <p class="card-title h5 mb-2">{{ article.author }}</p>
               <h5 class="card-title h5 mb-2">{{ article.title }}</h5>

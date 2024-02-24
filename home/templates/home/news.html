@@ -17,13 +17,13 @@
           {% endif %}
           <!-- Card Body -->
           <div class="card-body d-flex flex-column">
-            <p class="card-title h5 mb-2">{{ article.author }}</p>
+            <p class="card-title p mb-2">{{ article.author }}</p>
             <h5 class="card-title h5 mb-2">{{ article.title }}</h5>
-            <p class="card-title h5 mb-2">{{ article.source.name }}</p>
+            <p class="card-title h4 mb-2">{{ article.source.name }}</p>
             <p class="card-text text-truncate">{{ article.description }}</p>
             <div class="mt-auto"></div> 
             <hr/>
-            <small class="small text-muted">date: {{ article.publishedAt }}</small>
+            <small class="small text-muted text-center">date: {{ article.publishedAt }}</small>
             <a href="{{ article.url }}" target="_blank" class="btn btn-success custom-width-btn mt-2 mx-auto">Read More...</a>
           </div>
         </div>

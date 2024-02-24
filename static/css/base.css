@@ -23,11 +23,10 @@
     background-color: var(--off-white);
 }
 
-/* Colours */
+/* Navbar */
 nav {
     background-color: var(--red);
 }
-
 
 .navbar-nav .nav-link {
     color: var(--white);
@@ -40,15 +39,35 @@ nav {
 /* Header & Title */
 h1 {
     font-family: var(--title);
+    color: var(--black);
+    
 }
-p{
+.lead {
     font-family: var(--main-font);
+    color: var(--red);
 }
 
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.blink-text {
+    animation: blink 1s infinite;
+}
 
 /* Article */
 
     /* Button */
 .custom-width-btn {
     width: 50%; 
+}
+
+.small {
+    color: var(--red);
+}
+
+.h5 {
+    color: var(--red);
 }

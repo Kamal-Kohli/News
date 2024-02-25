@@ -101,6 +101,14 @@ h1 {
     padding-right: 15px;
 }
 
+/* Form */
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    border-radius: 8px;
+}
+
 /* Media Screen */
 
 @media (min-width: 576px) {

@@ -4,65 +4,62 @@
 <header>
   {% with request.resolver_match.url_name as url_name %}
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid">
-            <!-- Logo -->
-          <a class="navbar-brand active" href="{% url 'home' %}?category=general"><img src="{% static 'images/logo.webp' %}" alt="Heads and Tails animated logo" class="logo" width="200px"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <!-- Home -->
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}?category=general">Home</a>
-              </li>
-              <!-- Country Dropdown links -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Country
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=in">India</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=ie">Ireland</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=de">Germany</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=us">United States</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=gb">United Kingdom</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=ua">Ukraine</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=ru">Russia</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?country=za">South Africa</a></li>
-                </ul>
-              </li>
-              <!-- Categaries Dropdown links -->
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categaries
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{% url 'home' %}?category=Sports">Sports</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?category=Business">Business</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?category=Entertainment">Entertainment</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?category=technology">Technology</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?category=health">Health</a></li>
-                  <li><a class="dropdown-item" href="{% url 'home' %}?category=Science">Science</a></li>
-                </ul>
-              </li>
-              <!-- Resigration -->
-              {% if request.user.is_authenticated %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
-              </li>
-              {% else %}
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
-              </li>
-              {% endif %}
-            </ul>
-          </div>
+      <div class="container-fluid">
+        <!-- Logo -->
+        <a class="navbar-brand active" href="{% url 'home' %}?category=general"><img src="{% static 'images/logo.webp' %}" alt="Heads and Tails animated logo" class="logo" width="200px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <!-- Home -->
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'home' %}active{% endif %}" aria-current="page" href="{% url 'home' %}?category=general">Home</a>
+            </li>
+            <!-- Country Dropdown links -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Country</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=in">India</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=ie">Ireland</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=de">Germany</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=us">United States</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=gb">United Kingdom</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=ua">Ukraine</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=ru">Russia</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?country=za">South Africa</a></li>
+              </ul>
+            </li>
+            <!-- Categaries Dropdown links -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categaries</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="{% url 'home' %}?category=Sports">Sports</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?category=Business">Business</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?category=Entertainment">Entertainment</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?category=technology">Technology</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?category=health">Health</a></li>
+                <li><a class="dropdown-item" href="{% url 'home' %}?category=Science">Science</a></li>
+              </ul>
+            </li>
+            <!-- Resigration -->
+            {% if request.user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'accounts_logout' %}active{% endif %}" href="/accounts/logout/">Logout</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'accounts_signup' %}active{% endif %}" href="/accounts/signup/">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {% if url_name == 'accounts_login' %}active{% endif %}" href="/accounts/login/">Login</a>
+            </li>
+            {% endif %}
+          </ul>
         </div>
-      </nav>
-    {% endwith %}
+      </div>
+    </nav>
+  {% endwith %}
 </header>
 <br/>
+

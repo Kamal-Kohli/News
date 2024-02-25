@@ -33,8 +33,20 @@ nav {
 }
 
 .navbar-nav .nav-link.active {
-  color: var(--white);
+    color: var(--white);
 } 
+
+button .navbar-toggler {
+    color: white; 
+}
+.navbar-toggler-icon {
+    color: white; 
+}
+
+.navbar-nav .nav-link {
+    font-size: 20px;
+    margin-right: 25px
+  }
 
 /* Header & Title */
 h1 {

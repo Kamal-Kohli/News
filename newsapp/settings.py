@@ -41,9 +41,6 @@ INSTALLED_APPS = [
     # Crispy
     'crispy_forms',
     'crispy_bootstrap5',
-    
-
-
 ]
 
 SITE_ID = 1
@@ -139,7 +136,7 @@ USE_I18N = True
 
 USE_TZ = True
 
-#Account Setup
+# Account Setup
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True

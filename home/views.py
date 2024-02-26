@@ -35,3 +35,4 @@ class Index(TemplateView):
         context['total_articles'] = articles_data['totalResults']
         return context
 
+        
